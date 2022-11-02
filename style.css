@@ -105,11 +105,15 @@ main {
   grid-column: 1 / -1;
 }
 
-.announcements, .trending {
+.announcements {
   display: grid;
   grid-template-rows: min-content repeat(3, 1fr);
 }
 
+.trending {
+  display: grid;
+  grid-template-rows: min-content repeat(4, 1fr);
+}
 
 /* Design */
 .sidebar {
@@ -183,4 +187,24 @@ main {
 .header .bot .left p:last-of-type {
   align-self: start;
   font-weight: bold;
+}
+
+.trending .card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.trending .card .accounticon {
+  height: 3rem;
+  grid-row: 1 / -1;
+}
+
+.trending .card h3 {
+  align-self: end;
+}
+
+.trending .card p {
+  align-self: start;
 }
