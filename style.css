@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  font-family: 'Roboto', sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,19 +36,17 @@ body {
   grid-template-rows: 1fr 4fr;
 }
 
-.sidebar {
-  grid-row: 1 / -1
-}
-
 .header {
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
 
 .sidebar {
+  grid-row: 1 / -1;
+
   display: grid;
   grid-template-rows: repeat(3, min-content);
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .header .top, .header .bot {
@@ -97,4 +101,38 @@ main {
 .announcements, .trending {
   display: grid;
   grid-template-rows: min-content repeat(3, 1fr);
+}
+
+
+/* Design */
+.sidebar {
+  background-color: #1e40af;
+  padding: 0.5rem;
+}
+
+.sidebar .logo {
+  display: flex;
+  align-items: center;
+
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.sidebar .links, .sidebar .settings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar .links .link, .sidebar .settings .setting {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  color: white;
+}
+
+.sidebar .links img, .sidebar .settings img {
+  height: 1.5rem;
 }
