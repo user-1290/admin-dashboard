@@ -4,7 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -26,7 +26,7 @@ main {
 
 .bot {
   border: 2px solid purple;
-}
+} */
 
 body {
   height: 100vh;
@@ -39,6 +39,7 @@ body {
 .header {
   display: grid;
   grid-template-rows: 1fr 1fr;
+  padding: 0.5rem 1rem;
 }
 
 .sidebar {
@@ -91,6 +92,7 @@ main {
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr 1fr;
+  gap: 1rem;
 }
 
 .projects {
@@ -99,17 +101,23 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: min-content repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .projects-title {
   grid-column: 1 / -1;
 }
 
-.announcements, .trending {
+.announcements {
   display: grid;
-  grid-template-rows: min-content repeat(3, 1fr);
+  grid-template-rows: min-content 1fr;
+  /* align-items: center; */
 }
 
+.trending {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
 
 /* Design */
 .sidebar {
@@ -183,4 +191,80 @@ main {
 .header .bot .left p:last-of-type {
   align-self: start;
   font-weight: bold;
+}
+
+.trending .card {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.trending .card .accounticon {
+  height: 3rem;
+  grid-row: 1 / -1;
+}
+
+.trending .card h3 {
+  align-self: end;
+}
+
+.trending .card p {
+  align-self: start;
+}
+
+main {
+  background-color: gray;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+main h2 {
+  font-weight: bold;
+}
+
+.projects .card {
+  background-color: white;
+  border-radius: 5px;
+  border-left: 5px solid orange;
+  padding: 1.5rem 1rem;
+}
+
+.projects .card h2 {
+  margin-bottom: 0.25rem;
+}
+
+.announcements, .trending {
+  gap: 1rem;
+}
+
+.announcements-cards {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.announcements-cards h2 {
+  font-weight: 600;
+}
+
+.announcements-cards .card:not(:last-of-type) {
+  border-bottom: 1px solid hsl(0, 0%, 50%, 25%);
+}
+
+.announcements .card{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.trending-cards {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+
+  background-color: white;
+  border-radius: 1rem;
 }
