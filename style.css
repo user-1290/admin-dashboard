@@ -33,7 +33,7 @@ body {
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: min-content 1fr;
 }
 
 .header {
@@ -53,30 +53,37 @@ body {
   display: grid;
   grid-template-columns: repeat(2, min-content);
   justify-content: space-between;
+  align-items: center;
 }
 
 .header .top .left {
   display: grid;
   grid-template-columns: repeat(2, min-content);
+  gap: 0.25rem;
+  align-items: center;
 }
 
 .header .top .right {
   display: grid;
   grid-template-columns: repeat(3, min-content);
+  gap: 0.75rem;
+  align-items: center;
 }
 
 .header .bot .left {
   display: grid;
   grid-template-columns: repeat(2, max-content);
   grid-template-rows: repeat(2, min-content);
+  align-items: center;
 }
 
 .header .bot .right {
   display: grid;
   grid-template-columns: repeat(3, min-content);
+  gap: 1rem;
 }
 
-.header .bot .left .icon {
+.header .bot .left .accounticon {
   grid-row: 1 / -1;
 }
 
@@ -135,4 +142,45 @@ main {
 
 .sidebar .links img, .sidebar .settings img {
   height: 1.5rem;
+}
+
+.searchbar {
+  background-color: lightgray;
+  border-radius: 1rem;
+  height: 1.5rem;
+  width: 20rem;
+}
+
+.searchicon, .bellicon {
+  height: 1.5rem;
+}
+
+.top .accounticon {
+  height: 3rem;
+}
+
+.bot .accounticon {
+  height: 3.5rem;
+  margin-right: 0.5rem;
+}
+
+.button {
+  background-color: #1e40af;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .bot .left p:first-of-type {
+  align-self: end;
+  font-size: small;
+  margin-bottom: 0.25rem;
+}
+
+.header .bot .left p:last-of-type {
+  align-self: start;
+  font-weight: bold;
 }
